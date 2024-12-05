@@ -1,0 +1,48 @@
+<!-- static/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Monitor</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Website Monitoring Dashboard</h1>
+
+        <div class="input-section">
+            <div class="website-inputs" id="websiteInputs">
+                <div class="website-input">
+                    <input type="text" placeholder="Enter website URL (e.g., https://example.com)" class="url-input">
+                </div>
+            </div>
+            <button onclick="addWebsiteInput()" class="add-btn">+ Add Website</button>
+
+            <div class="monitoring-controls">
+                <div class="control-group">
+                    <label>Check Interval (seconds):</label>
+                    <input type="number" id="intervalInput" value="30" min="5">
+                </div>
+                <div class="control-group">
+                    <label>Requests per Check:</label>
+                    <input type="number" id="requestsInput" value="3" min="1">
+                </div>
+            </div>
+
+            <button onclick="startMonitoring()" class="start-btn">Start Monitoring</button>
+        </div>
+
+        <div class="charts-container">
+            <div class="chart-wrapper">
+                <canvas id="responseTimeChart"></canvas>
+            </div>
+            <div class="chart-wrapper">
+                <canvas id="availabilityChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
